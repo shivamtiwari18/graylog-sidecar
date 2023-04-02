@@ -1,0 +1,20 @@
+server_url: ${GS_SERVER_URL}
+server_api_token: ${GS_SERVER_API_TOKEN}
+node_id: ${GS_NODE_ID}
+node_name: ${GS_NODE_NAME}
+update_interval: ${GS_UPDATE_INTERVAL:10}
+tls_skip_verify: ${GS_TLS_SKIP_VERIFY:"false"}
+send_status: ${GS_SEND_STATUS:"true"}
+list_log_files: ${GS_LIST_LOG_FILES:[]}
+cache_path: ${GS_CACHE_PATH:"/var/cache/graylog-sidecar"}
+collector_configuration_directory: ${GS_COLLECTOR_CONFIGURATION_DIRECTORY:"/var/lib/graylog-sidecar/generated"}
+log_path: ${GS_LOG_PATH:"/var/log/graylog-sidecar"}
+log_rotate_max_file_size: ${GS_LOG_ROTATE_MAX_FILE_SIZE:"10MiB"}
+log_rotate_keep_files: ${GS_LOG_ROTATE_KEEP_FILES:10}
+collector_binaries_whitelist: ${GS_COLLECTOR_BINARIES_WHITELIST:["/usr/bin/filebeat", "/usr/bin/packetbeat", "/usr/bin/metricbeat", "/usr/bin/heartbeat", "/usr/bin/auditbeat", "/usr/bin/journalbeat", "/usr/share/filebeat/bin/filebeat", "/usr/share/packetbeat/bin/packetbeat", "/usr/share/metricbeat/bin/metricbeat", "/usr/share/heartbeat/bin/heartbeat", "/usr/share/auditbeat/bin/auditbeat", "/usr/share/journalbeat/bin/journalbeat", "/usr/bin/nxlog", "/opt/nxlog/bin/nxlog"]}
+tags: ${GS_TAGS:[]}
+backends:
+    - name: filebeat
+      enabled: true
+      binary_path: /usr/bin/filebeat
+      configuration_path: /etc/graylog/sidecar/sidecar.yml
